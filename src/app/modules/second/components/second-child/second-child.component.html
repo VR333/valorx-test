@@ -1,0 +1,18 @@
+<h1>Second Child Page</h1>
+
+<p>I am a child component and I will load the same data. Even if parent has loaded it previously</p>
+
+<p *ngIf="loading$ | async">Child component is loading data</p>
+
+<h3>Title = {{ title$ | async }}</h3>
+
+<div *ngIf="user$ | async as user else empty">
+  User data:
+  <b>{{ user.name }} - {{ user.age }}</b>
+</div>
+
+<p>User Service has been called times: {{ loadCount$ | async }} (I will reset my count as soon as component will be destroyed)</p>
+
+<button (click)="loadUser()">Load another user!</button>
+
+<ng-template #empty>No user found!</ng-template>

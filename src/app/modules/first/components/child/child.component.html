@@ -1,0 +1,14 @@
+<p>I am a child component and my parent is First!</p>
+
+<h3>Title = {{ title }}</h3>
+
+<div *ngIf="user else empty">
+  User data:
+  <b>{{ user.name }} - {{ user.age }}</b>
+</div>
+
+<button (click)="changeByClickEvent()">Change With click event</button>
+
+<p>Current count is: <b>{{ count }}</b></p>
+
+<ng-template #empty>No user found!</ng-template>
