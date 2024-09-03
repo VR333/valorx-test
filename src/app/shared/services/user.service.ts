@@ -11,11 +11,11 @@ export interface IUser {
 })
 export class UserService {
   loadCounter$ = new BehaviorSubject(0);
-  userGreeting$ = new BehaviorSubject('Welcome to Varlox!');
+  userGreeting$ = new BehaviorSubject('Welcome to Valorx!');
 
   getUser(): Observable<IUser> {
     const count = this.loadCounter$.value;
-    const name = !count ? 'Rostyslav Vakh': 'Varlox employee: Rostyslav Vakh';
+    const name = !count ? 'Rostyslav Vakh': 'Valorx employee: Rostyslav Vakh';
 
     return of({ name, age: 28 }).pipe(
       delay(2000),
