@@ -38,6 +38,7 @@ export class FirstComponent implements OnInit {
   }
 
   loadUser() {
+    // data wil be updated inside a view due to Default strategy
     this.loading = true;
     this.userService.getUser().pipe(
       finalize(() => (this.loading = false))

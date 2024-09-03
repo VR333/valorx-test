@@ -27,6 +27,8 @@ export class SecondChildComponent implements OnInit {
   }
 
   loadUser() {
+    // changes will be displayed as values are consumed with async pipe
+    // that will mark component for check
     this.loading$.next(true);
     this.userService.getUser().pipe(
       finalize(() => this.loading$.next(false))

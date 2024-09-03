@@ -15,6 +15,16 @@
   </section>
 </section>
 
+<section class="data-box">
+  <span>Random: <b>{{ oopsIamNotUpdatedAnymore }}</b></span>
+  <span>I am not updated properly, but I am trying every 1sec! I will on other component events. Change count or load user :)</span>
+</section>
+
+<section class="data-box">
+  <span>Count: <b>{{ count }}</b></span>
+  <button mat-raised-button color="primary" (click)="changeByClickEvent()">Change With click event</button>
+</section>
+
 <ng-template #empty>No user found!</ng-template>
 
 <mat-divider></mat-divider>
