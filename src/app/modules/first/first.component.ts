@@ -1,6 +1,9 @@
 import { finalize } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { NgIf } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { UserService, IUser } from '@services';
 import { ChildComponent } from './components';
 
@@ -9,7 +12,7 @@ import { ChildComponent } from './components';
   templateUrl: './first.component.html',
   styleUrls: ['./first.component.scss'],
   standalone: true,
-  imports: [ChildComponent, NgIf]
+  imports: [ChildComponent, NgIf, MatButtonModule, MatDividerModule, MatProgressSpinnerModule]
 })
 export class FirstComponent implements OnInit {
   loading = false;

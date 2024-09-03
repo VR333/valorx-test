@@ -1,5 +1,4 @@
 <p>I am a child component and my parent is First!</p>
-
 <h3>Title = {{ title }}</h3>
 
 <div *ngIf="user else empty">
@@ -7,8 +6,9 @@
   <b>{{ user.name }} - {{ user.age }}</b>
 </div>
 
-<button (click)="changeByClickEvent()">Change With click event</button>
-
-<p>Current count is: <b>{{ count }}</b></p>
+<section class="data-box">
+  <span>Count: <b>{{ count }}</b></span>
+  <button mat-raised-button color="primary" (click)="changeByClickEvent()">Change With click event</button>
+</section>
 
 <ng-template #empty>No user found!</ng-template>

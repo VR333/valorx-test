@@ -1,6 +1,9 @@
 import { BehaviorSubject, finalize } from 'rxjs';
 import { AsyncPipe, NgIf } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { IUser, UserService } from '@services';
 import { SecondChildComponent } from './components';
 
@@ -10,7 +13,7 @@ import { SecondChildComponent } from './components';
   styleUrls: ['./second.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [AsyncPipe, NgIf, SecondChildComponent]
+  imports: [AsyncPipe, NgIf, SecondChildComponent, MatButtonModule, MatDividerModule, MatProgressSpinnerModule]
 })
 export class SecondComponent implements OnInit {
   loading$ = new BehaviorSubject(false);

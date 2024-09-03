@@ -1,6 +1,7 @@
 import { interval, ReplaySubject, takeUntil } from 'rxjs';
 import { AsyncPipe, NgIf } from '@angular/common';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
 import { IUser } from '@services';
 
 @Component({
@@ -9,7 +10,7 @@ import { IUser } from '@services';
   styleUrls: ['./child.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [AsyncPipe, NgIf]
+  imports: [AsyncPipe, NgIf, MatButtonModule]
 })
 export class ChildComponent implements OnInit, OnDestroy {
   @Input() title = '';

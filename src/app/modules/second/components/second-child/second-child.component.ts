@@ -1,6 +1,8 @@
 import { BehaviorSubject, finalize } from 'rxjs';
 import { AsyncPipe, NgIf } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { IUser, UserService } from '@services';
 
 @Component({
@@ -9,7 +11,7 @@ import { IUser, UserService } from '@services';
   styleUrls: ['./second-child.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [AsyncPipe, NgIf],
+  imports: [AsyncPipe, NgIf, MatButtonModule, MatProgressSpinnerModule],
   providers: [UserService]
 })
 export class SecondChildComponent implements OnInit {

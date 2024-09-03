@@ -2,20 +2,25 @@
 
 <p>I am a first parent component with a default change detection!</p>
 <p>I get root UserService instance for parent and for all childs components.</p>
-<p>User Service has been called times: {{ loadCount }}</p>
+<p>User Service has been called times: <b>{{ loadCount }}</b></p>
 
-<p>Count: <b>{{ count }}</b></p>
+<section class="data-box">
+  <span>Count: <b>{{ count }}</b></span>
+  <button mat-raised-button color="primary" (click)="changeCount()">Change count</button>
+</section>
 
-<button (click)="changeCount()">Change count</button>
+<section class="data-box">
+  <div>
+    <p>Parent title: {{ userGreetings }}</p>
+    <p>Parent user: {{ user?.name }} - {{ user?.age }}</p>
+  </div>
 
-<p>Parent title: {{ userGreetings }}</p>
+  <button mat-raised-button color="primary" (click)="loadUser()">Load another user!</button>
+  <section class="spinner-section" *ngIf="loading">
+    <mat-spinner></mat-spinner>
+  </section>
+</section>
 
-<p>Parent user: {{ user?.name }} - {{ user?.age }}</p>
-
-<p>END of Parent data</p>
-
-<p *ngIf="loading">Parent component is loading data</p>
-
-<button (click)="loadUser()">Load another user!</button>
+<mat-divider></mat-divider>
 
 <app-child [title]="userGreetings" [user]="user"></app-child>
