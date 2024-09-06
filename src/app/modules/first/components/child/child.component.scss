@@ -1,4 +1,9 @@
 :host {
   padding: 20px 0;
   display: block;
+
+  .table-wrapper {
+    max-height: 400px;
+    overflow: scroll;
+  }
 }

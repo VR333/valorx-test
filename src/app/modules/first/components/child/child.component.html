@@ -12,3 +12,42 @@
 </section>
 
 <ng-template #empty>No user found!</ng-template>
+
+<form>
+  <mat-form-field>
+    <mat-label>Search Contact</mat-label>
+    <input matInput placeholder="search" [formControl]="control">
+  </mat-form-field>
+</form>
+
+
+<section class="table-wrapper" #tableWrapper>
+  <table
+    mat-table [dataSource]="(control.value ? (filteredData$ | async) : (tableData$ | async)) || []"
+    class="mat-elevation-z8"
+  >
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> Id. </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="contact_name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.contact_name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef> email </th>
+      <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="phone_number">
+      <th mat-header-cell *matHeaderCellDef> phone_number </th>
+      <td mat-cell *matCellDef="let element"> {{element.phone_number}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</section>
+
